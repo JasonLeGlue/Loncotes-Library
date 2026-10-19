@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using LocotesLibrary.Models;
 namespace LoncotesLibrary.Models;
 
 public class Material
@@ -11,4 +12,6 @@ public class Material
     [Required]
     public int GenreId { get; set; }
     public DateTime? OutOfCirculationSince { get; set; }
+    public MaterialType MaterialType { get; set; }
+    public Genre Genre { get; set; }
 }

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace LocotesLibrary.Models;
 
-public class MaterialTypeId
+public class MaterialType
 {
     public int Id { get; set; }
     [Required]
