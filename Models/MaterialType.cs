@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-namespace LocotesLibrary.Models;
+namespace LoncotesLibrary.Models;
 
 public class MaterialType
 {

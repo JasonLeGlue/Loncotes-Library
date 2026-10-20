@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using LocotesLibrary.Models;
 namespace LoncotesLibrary.Models;
 
 public class Material

@@ -1,4 +1,4 @@
-using LocotesLibrary.Models;
+using LoncotesLibrary.Models;
 
 namespace LoncotesLibrary.Models.DTOs;
 
