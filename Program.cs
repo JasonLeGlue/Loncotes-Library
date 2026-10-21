@@ -68,6 +68,29 @@ app.MapGet("/api/materials", (LoncotesLibraryDbContext db, int? materialTypeId, 
     });
 });
 
+app.MapPost("/api/materials", (LoncotesLibraryDbContext db, Material material) =>
+{
+
+    db.Materials.Add(material);
+    db.SaveChanges();
+    return Results.Created($"/api/materials/{material.Id}", material);
+});
+
+app.MapPost("/api/materials/{id}", (LoncotesLibraryDbContext db, int id) =>
+{
+    Material material = db.Materials.SingleOrDefault(m => m.Id == id);
+
+    if (material == null)
+    {
+        return Results.NotFound();
+    }
+
+    material.OutOfCirculationSince = DateTime.Now;
+    db.SaveChanges();
+    return Results.NoContent();
+
+});
+
 app.MapGet("/api/materialTypes", (LoncotesLibraryDbContext db) =>
 {
     return db.MaterialTypes
